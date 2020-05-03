@@ -37,11 +37,11 @@ class LinkedList(object):
             return
         self.size -= 1
         my_iter = self.head
-        if my_iter == self.head:
+        if data == my_iter.data:
             self.head = self.head.next_node
         while my_iter.next_node is not None:
-            if my_iter.next_node == data:
-                my_iter = my_iter.next_node.next_node
+            if my_iter.next_node.data == data:
+                my_iter.next_node = my_iter.next_node.next_node
                 return
             else:
                 my_iter = my_iter.next_node
@@ -60,5 +60,5 @@ hi.insert_at_end(5)
 hi.insert_at_start(1)
 hi.insert_at_start(2)
 hi.insert_at_start(3)
-hi.remove(2)
+hi.remove(5)
 hi.out()
